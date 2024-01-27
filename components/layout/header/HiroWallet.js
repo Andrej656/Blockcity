@@ -1,7 +1,7 @@
 // HiroWallet.js
 
 import { connect, ConnectionStatus } from '@stacks/connect';
-import { stacksNetwork } from './stacks';
+import { stacksNetwork } from '../../../web3/stacks';
 
 const WalletConnect = async () => {
   try {
