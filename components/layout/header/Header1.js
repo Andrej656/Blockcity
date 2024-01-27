@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Menu from '../Menu';
 import MobileMenu from '../MobileMenu';
-import WalletConnect from './HiroWallet'; // Adjust the path
+import WalletConnect from './HiroWallet';
 
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu }) {
   const [isSidebar, setSidebar] = useState(false);
