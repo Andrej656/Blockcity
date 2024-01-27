@@ -1,14 +1,15 @@
-// wallet.js
-import { connect, ConnectionStatus } from '@stacks/connect';
-import { stacksNetwork } from './stacks'; // Import your Stacks.js configuration
+// HiroWallet.js
 
-export const handleConnectWallet = async () => {
+import { connect, ConnectionStatus } from '@stacks/connect';
+import { stacksNetwork } from './stacks';
+
+const WalletConnect = async () => {
   try {
     const authResponse = await connect({
-      manifestPath: '/path-to-your/manifest.json', // Replace with your manifest.json path
+      manifestPath: '/path-to-your/manifest.json',
       appDetails: {
         name: 'Your App Name',
-        icon: window.location.origin + '/path-to-your/app-icon.png', // Replace with your app icon path
+        icon: window.location.origin + '/path-to-your/app-icon.png',
       },
       redirectTo: window.location.origin,
       network: stacksNetwork,
@@ -27,12 +28,4 @@ export const handleConnectWallet = async () => {
   }
 };
 
-export const handleDisconnectWallet = () => {
-  // Perform actions to disconnect wallet if needed
-  console.log('Disconnecting wallet...');
-};
-
-// Additional utility function to check if the wallet is connected
-export const isWalletConnected = () => {
-  return window.stacks && window.stacks.userData && window.stacks.userData.profile;
-};
+export default WalletConnect;
